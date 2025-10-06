@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pendaftaran Mahasiswa Baru</title>
+  <!-- Hubungkan CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo-box">
+        <div class="logo">PMB</div>
+        <div>
+          <h2>Pendaftaran</h2>
+          <small>Mahasiswa Baru</small>
+        </div>
+      </div>
+      <div class="progress"><span id="bar"></span></div>
+      <div class="steps">
+        <div><div class="circle">1</div> Pribadi</div>
+        <div><div class="circle">2</div> Keluarga</div>
+        <div><div class="circle">3</div> Pendidikan</div>
+        <div><div class="circle">4</div> Program</div>
+        <div><div class="circle">5</div> Dokumen</div>
+        <div><div class="circle">6</div> Konfirmasi</div>
+      </div>
+    </aside>
+
+    <!-- Form -->
+    <section class="form-box">
+      <form id="formPMB" novalidate>
+        <!-- STEP 1 -->
+        <div class="step-panel active" data-step="1">
+          <h3>1. Data Pribadi</h3>
+          <p class="note">Isi sesuai KTP</p>
+          <div class="grid">
+            <div><label>Nama Lengkap *</label><input name="nama" required></div>
+            <div><label>NIK *</label><input name="nik" required></div>
+            <div><label>Tempat Lahir</label><input name="tempat"></div>
+            <div><label>Tanggal Lahir</label><input type="date" name="tgl"></div>
+            <div><label>Jenis Kelamin</label>
+              <select name="jk">
+                <option value="">Pilih</option>
+                <option>Laki-laki</option>
+                <option>Perempuan</option>
+              </select>
+            </div>
+            <div><label>Agama</label>
+              <select name="agama">
+                <option value="">Pilih</option>
+                <option>Islam</option>
+                <option>Kristen</option>
+                <option>Hindu</option>
+                <option>Buddha</option>
+              </select>
+            </div>
+            <div class="grid full"><label>Alamat</label><textarea name="alamat"></textarea></div>
+            <div><label>No HP *</label><input name="hp" required></div>
+            <div><label>Email *</label><input type="email" name="email" required></div>
+          </div>
+          <div class="error"></div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-panel" data-step="2">
+          <h3>2. Data Keluarga</h3>
+          <div class="grid">
+            <div><label>Nama Orang Tua *</label><input name="nama_ortu" required></div>
+            <div><label>Pekerjaan</label><input name="pekerjaan_ortu"></div>
+            <div><label>Pendidikan</label><input name="pend_ortu"></div>
+            <div class="grid full"><label>Alamat</label><textarea name="alamat_ortu"></textarea></div>
+          </div>
+          <div class="error"></div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-panel" data-step="3">
+          <h3>3. Data Pendidikan</h3>
+          <div class="grid">
+            <div><label>Asal Sekolah *</label><input name="asal_sekolah" required></div>
+            <div><label>Tahun Lulus *</label><input type="number" name="tahun_lulus" required></div>
+          </div>
+          <div class="error"></div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step-panel" data-step="4">
+          <h3>4. Program Studi</h3>
+          <div class="grid">
+            <div><label>Pilihan 1 *</label><input name="pil1" required></div>
+            <div><label>Pilihan 2</label><input name="pil2"></div>
+          </div>
+          <div class="error"></div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="step-panel" data-step="5">
+          <h3>5. Dokumen</h3>
+          <div class="grid">
+            <div class="grid full"><label>Upload KTP *</label><input type="file" name="ktp" required></div>
+          </div>
+          <div class="error"></div>
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="step-panel" data-step="6">
+          <h3>6. Konfirmasi</h3>
+          <p class="note">Cek kembali data Anda</p>
+          <div id="summary"></div>
+          <label><input type="checkbox" required> Saya menyatakan data benar</label>
+          <div class="error"></div>
+        </div>
+
+        <!-- Tombol Navigasi -->
+        <div class="actions">
+          <button type="button" class="btn secondary" id="prevBtn">Prev</button>
+          <div>
+            <button type="button" class="btn primary" id="nextBtn">Next</button>
+            <button type="submit" class="btn primary" id="submitBtn" style="display:none">Submit</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <!-- Hubungkan JS -->
+  <script src="script.js"></script>
+</body>
+</html>
